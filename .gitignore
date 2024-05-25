@@ -19,5 +19,7 @@ __pycache__/
 **.terraform.lock*
 **terraform.tfstate*
 
+mlruns/
+output/
 
 .DS_Store
