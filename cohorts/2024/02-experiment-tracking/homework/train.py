@@ -7,6 +7,8 @@ from sklearn.metrics import mean_squared_error
 
 import mlflow
 
+mlflow.set_tracking_uri(uri="http://127.0.0.1:5000")
+
 #enable autolog
 mlflow.autolog(disable=False)
 
