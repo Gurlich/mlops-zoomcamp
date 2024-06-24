@@ -1,0 +1,28 @@
+# config file version
+apiVersion: 1
+
+# list of datasources to insert/update
+# available in the database
+datasources:
+#   - name: PostgreSQL
+#     type: postgres
+#     access: proxy
+#     url: db.:5432
+#     database: test
+#     user: postgres
+#     secureJsonData:
+#       password: 'example'
+#     jsonData:
+#       sslmode: 'disable'
+
+  - name: grafana-postgresql-datasource
+    type: postgres
+    access: proxy
+    url: magic-database:5432
+    database: metrics_db
+    user: postgres
+    secureJsonData:
+      password: 'password'
+    jsonData:
+      sslmode: 'disable'
+      database: 'metrics_db'

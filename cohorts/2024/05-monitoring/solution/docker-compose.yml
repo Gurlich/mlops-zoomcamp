@@ -1,0 +1,31 @@
+services:
+# -------------------------------------------------------------------------- 
+  magic-database:
+    image: pgvector/pgvector:0.6.0-pg16
+    env_file:
+      - .env
+    ports:
+      - 5432:5432
+    volumes:
+      - "${PWD}/.postgres/data:/var/lib/postgresql/data/"
+    # restart: always
+    networks:
+      - app-network
+# -------------------------------------------------------------------------- 
+  magic-grafana:
+    image: grafana/grafana
+    user: "472"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana_config/grafana_datasources.yaml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
+      - ./grafana_config/grafana_dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
+      - ./grafana_dashboards:/opt/grafana/dashboards
+    networks:
+      - app-network
+    depends_on:
+      - magic-database      
+
+networks:
+  app-network:
+    driver: bridge

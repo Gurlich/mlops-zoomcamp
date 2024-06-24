@@ -12,6 +12,7 @@ data/
 venv
 .idea
 **/artifacts/
+**/ml_artifacts/
 **/models/
 
 __pycache__/
@@ -23,5 +24,7 @@ __pycache__/
 mlruns/
 output/
 **/archive/
+drafts.py
+.postgres
 
 .DS_Store
