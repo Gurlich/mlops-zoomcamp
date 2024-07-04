@@ -1,4 +1,4 @@
-data/
+**/data/
 .ipynb_checkpoints
 .bin
 *.db
@@ -14,6 +14,7 @@ venv
 **/artifacts/
 **/ml_artifacts/
 **/models/
+**/workspace/
 
 __pycache__/
 **.env
